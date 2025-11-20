@@ -10,35 +10,36 @@ variable "vpc_cidr" {
   description = "CIDR block for the VPC"
 }
 
-variable "subnet_cidrs-1" {
+variable "subnet_cidrs_1" {
   type        = list(string)
   description = "List of subnet CIDRs"
 }
 
-variable "azs-1" {
+variable "azs_1" {
   type        = list(string)
   description = "List of availability zones for the subnets"
 }
 
-variable "subnet_cidrs-2" {
+variable "subnet_cidrs_2" {
   type        = list(string)
   description = "List of subnet CIDRs"
 }
 
-variable "azs-2" {
+variable "azs_2" {
   type        = list(string)
   description = "List of availability zones for the subnets"
 }
 
-variable "map_public_ip-1" {
+variable "map_public_ip_1" {
   type        = bool
   default     = true
   description = "Assign public IP on launch?"
 }
 
-variable "map_public_ip-2" {
+variable "map_public_ip_2" {
   type        = bool
   default     = false
   description = "Assign public IP on launch?"
 }
+
 
