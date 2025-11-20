@@ -1,9 +1,7 @@
-variable "env" {
-  type        = string
-  description = "What Env we are creating (dev, qa, prod)"
+output "vpc_id" {
+  value = aws_vpc.main.id
 }
 
-variable "vpc_cidr" {
-  type        = string
-  description = "VPC CIDR"
+output "subnet_ids" {
+  value = aws_subnet.subnets[*].id
 }
