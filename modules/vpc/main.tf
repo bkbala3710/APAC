@@ -8,12 +8,12 @@ resource "aws_vpc" "main" {
   }
 }
 
-resource "aws_subnet" "subnets-1" {
-  count = length(var.subnet_cidrs-1)
+resource "aws_subnet" "subnets_1" {
+  count = length(var.subnet_cidrs_1)
 
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = var.subnet_cidrs-1[count.index]
-  availability_zone       = var.azs-1[count.index]
+  cidr_block              = var.subnet_cidrs_1[count.index]
+  availability_zone       = var.azs_1[count.index]
   map_public_ip_on_launch = var.map_public_ip-1
 
   tags = {
@@ -21,18 +21,19 @@ resource "aws_subnet" "subnets-1" {
   }
                       }
 
-resource "aws_subnet" "subnets-2" {
-  count = length(var.subnet_cidrs-2)
+resource "aws_subnet" "subnets_2" {
+  count = length(var.subnet_cidrs_2)
 
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = var.subnet_cidrs-2[count.index]
-  availability_zone       = var.azs-2[count.index]
-  map_public_ip_on_launch = var.map_public_ip-2
+  cidr_block              = var.subnet_cidrs_2[count.index]
+  availability_zone       = var.azs_2[count.index]
+  map_public_ip_on_launch = var.map_public_ip_2
 
   tags = {
     Name = "${var.vpc_name}-Private-subnet-${count.index + 1}"
   }
 }
+
 
 
 
