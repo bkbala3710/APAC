@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Iam-mithran/LWM-Infra-Pipeline.git'
+        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/bkbala3710/APAC.git'
       }
     }
 
@@ -52,3 +52,4 @@ pipeline {
   }
 
 }
+
