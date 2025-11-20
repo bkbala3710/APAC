@@ -7,3 +7,11 @@ resource "aws_vpc" "myvpc" {
   }
 }
 
+resource "aws_subnet" "public" {
+  for_each = toset(var.public_subnets)
+  vpc_id            = aws_vpc.this.id
+  cidr_block        = each.value
+  availability_zone = element(var.availability_zones, index(var.public_subnets, each.value))
+  map_public_ip_on_launch = true
+  tags = { Name = "public-${each.value}" }
+}
