@@ -8,10 +8,15 @@ pipeline {
   }
 
   stages {
-    stage('Checkout') {
-      steps {
-        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/bkbala3710/APAC.git, credentialsId: 'bc751208-b51c-46fe-9124-572af2259811'
-      }
+   stage('Checkout') {
+        steps {
+            git(
+                branch: "${env.BRANCH_NAME}",
+                url: 'https://github.com/bkbala3710/APAC.git',
+                credentialsId: 'bc751208-b51c-46fe-9124-572af2259811'
+            )
+        }
+    }
     }
 
     stage('Terraform Init') {
@@ -53,4 +58,5 @@ pipeline {
     }
   }
 }
+
 
