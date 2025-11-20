@@ -9,7 +9,7 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "subnets-1" {
-  count = length(var.subnet_cidrs)
+  count = length(var.subnet_cidrs-1)
 
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.subnet_cidrs-1[count.index]
@@ -22,7 +22,7 @@ resource "aws_subnet" "subnets-1" {
                       }
 
 resource "aws_subnet" "subnets-2" {
-  count = length(var.subnet_cidrs)
+  count = length(var.subnet_cidrs-2)
 
   vpc_id                  = aws_vpc.main.id
   cidr_block              = var.subnet_cidrs-2[count.index]
@@ -33,5 +33,6 @@ resource "aws_subnet" "subnets-2" {
     Name = "${var.vpc_name}-Private-subnet-${count.index + 1}"
   }
 }
+
 
 
