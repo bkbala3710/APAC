@@ -2,10 +2,10 @@ output "vpc_id" {
   value = aws_vpc.main.id
 }
 
-output "subnet_ids-1" {
+output "subnet_ids_1" {
   value = aws_subnet.subnets-1[*].id
 }
 
-output "subnet_ids-2" {
+output "subnet_ids_2" {
   value = aws_subnet.subnets-2[*].id
 }
