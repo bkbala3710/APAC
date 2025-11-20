@@ -1,5 +1,11 @@
-variable "aws_region" {
+variable "aws_region1" {
   type        = string
   default     = "ap-southeast-1"
-  description = "Which Region AWS Resources to be Created"
+  description = "Singapore"
+}
+
+variable "aws_region2" {
+  type        = string
+  default     = "ap-south-1"
+  description = "India"
 }
