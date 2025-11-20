@@ -1,9 +1,12 @@
 pipeline {
   agent any
- 
+
+  // Run pipeline only when a TAG is pushed
+
+
   environment {
-    ENV = "${env.BRANCH_NAME}"
-    TF_WORKDIR = "environments/${env.BRANCH_NAME}"
+    ENV = "${env.GIT_TAG_NAME}"
+    TF_WORKDIR = "environments/${env.GIT_TAG_NAME}"
   }
 
   stages {
@@ -11,19 +14,10 @@ pipeline {
     stage('Checkout') {
       steps {
         git(
-          branch: "${env.BRANCH_NAME}",
+          branch: "${env.GIT_TAG_NAME}",
           url: 'https://github.com/bkbala3710/APAC.git',
           credentialsId: 'bc751208-b51c-46fe-9124-572af2259811'
         )
-
-        script {
-          if (!env.GIT_TAG_NAME) {
-            echo "🔕 Not a tag. Build will stop."
-            currentBuild.result = 'NOT_BUILT'
-            error("This pipeline runs only on tags")
-          }
-          echo "✔ Tag detected: ${env.GIT_TAG_NAME}"
-        }
       }
     }
 
