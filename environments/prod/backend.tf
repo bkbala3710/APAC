@@ -7,7 +7,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "apac20112025"
+    bucket = "apac-20112025"
     key    = "environments/prod/terraform.tfstate"
     region = "ap-southeast-1"
   }
@@ -21,6 +21,7 @@ provider "aws" {
   alias  = "secondary"
   region = var.aws_region2
 }
+
 
 
 
