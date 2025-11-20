@@ -19,6 +19,7 @@ resource "aws_subnet" "subnets-1" {
   tags = {
     Name = "${var.vpc_name}-Public-subnet-${count.index + 1}"
   }
+                      }
 
 resource "aws_subnet" "subnets-2" {
   count = length(var.subnet_cidrs)
@@ -32,4 +33,5 @@ resource "aws_subnet" "subnets-2" {
     Name = "${var.vpc_name}-Private-subnet-${count.index + 1}"
   }
 }
+
 
