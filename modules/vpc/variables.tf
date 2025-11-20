@@ -30,9 +30,15 @@ variable "azs-2" {
   description = "List of availability zones for the subnets"
 }
 
-variable "map_public_ip" {
+variable "map_public_ip-1" {
   type        = bool
   default     = true
+  description = "Assign public IP on launch?"
+}
+
+variable "map_public_ip-2" {
+  type        = bool
+  default     = false
   description = "Assign public IP on launch?"
 }
 
