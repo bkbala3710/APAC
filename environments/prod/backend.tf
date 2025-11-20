@@ -1,4 +1,5 @@
 terraform {
+  required_version = "~> 1.11.0"
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -6,18 +7,19 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "lwm-terraform-bucket"
-    key    = "environments/dev/terraform.tfstate"
+    bucket = "apac"
+    key    = "environments/prod/terraform.tfstate"
     region = "ap-southeast-1"
   }
 }
 
 provider "aws" {
-  region = var.aws_region
+  region = var.aws_region1
 }
 
 provider "aws" {
   alias  = "primary"
-  region = var.aws_region
+  region = var.aws_region2
 }
+
 
