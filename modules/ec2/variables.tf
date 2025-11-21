@@ -1,24 +1,32 @@
-variable "ami_id" {
+variable "name_1" {
   type        = string
-  description = "Ami id of my EC2"
+  description = "Name tag for EC2"
 }
 
-variable "instance_type" {
+variable "ami_1" {
   type        = string
-  description = "Instance Type of my EC2"
+  description = "AMI ID"
 }
 
-variable "subnet_id" {
+variable "instance_type_1" {
   type        = string
-  description = "Subnet ID of my EC2"
+  default     = "t2.micro"
 }
 
-variable "ec2_count" {
+variable "subnet_id_1" {
   type        = string
-  description = "No of my EC2 to be created"
+  description = "Subnet ID where EC2 should be launched"
 }
 
-variable "env" {
+variable "key_name_1" {
   type        = string
-  description = "What Env we are creating (dev, qa, production)"
+}
+
+variable "security_group_ids_1" {
+  type = list(string)
+}
+
+variable "associate_public_ip_1" {
+  type    = bool
+  default = true
 }
