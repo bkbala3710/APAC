@@ -15,12 +15,13 @@ module "ec2" {
 
   name_1                  = "APAC_PROD_Bastion_host_1"
   ami_1                   = "ami-093a7f5fbae13ff67"
-  instance_type_1         = "t2.mirco"
-  subnet_id_1             = aws_subnet.subnets_1[0].id
+  instance_type_1         = "t2.micro"
+  subnet_id_1             = module.vpc.subnet_ids_1[0]
   key_name_1              = "prod-bastion-host-key"
   name_sg_1               = "prod_bastion_host_sg_1"
   associate_public_ip_1   = true
 }
+
 
 
 
