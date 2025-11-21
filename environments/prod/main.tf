@@ -1,3 +1,5 @@
+/*
+
 module "vpc" {
   source = "../../modules/vpc"  # update path based on your folder
 
@@ -28,6 +30,9 @@ resource "aws_ec2_instance_state" "stop_ec2" {
   instance_id = module.ec2.instance_id   # Or your instance ID variable
   state       = "stopped"
 }
+
+
+*/
 
 
 
