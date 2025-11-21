@@ -17,7 +17,6 @@ pipeline {
       steps {
         dir("${TF_WORKDIR}") {
           sh 'terraform init -reconfigure'
-          sh 'terraform import aws_s3_bucket.terraform_import_check_21112025 terraform-import-check-21112025'
         }
       }
     }
@@ -52,6 +51,7 @@ pipeline {
     }
   }
 }
+
 
 
 
