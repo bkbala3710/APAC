@@ -3,7 +3,7 @@ resource "aws_instance" "bastion_host_1" {
   instance_type               = var.instance_type_1
   subnet_id                   = var.subnet_id_1
   key_name                    = var.key_name_1
-  vvpc_security_group_ids     = [aws_security_group.prod_bastion_host_sg_1.id]
+  vpc_security_group_ids     = [aws_security_group.prod_bastion_host_sg_1.id]
   associate_public_ip_address = var.associate_public_ip_1
 
   tags = {
@@ -43,4 +43,5 @@ resource "aws_security_group" "prod_bastion_host_sg_1" {
     Name = var.name_sg_1
   }
 }
+
 
