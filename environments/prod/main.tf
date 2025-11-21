@@ -18,9 +18,10 @@ module "ec2" {
   instance_type_1         = "t2.mirco"
   subnet_id_1             = aws_subnet.subnets_1[0].id
   key_name_1              = "prod-bastion-host-key"
-  name_sg_1               = prod_bastion_host_sg_1
+  name_sg_1               = "prod_bastion_host_sg_1"
   associate_public_ip_1   = true
 }
+
 
 
 
