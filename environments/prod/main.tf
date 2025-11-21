@@ -20,7 +20,9 @@ module "ec2" {
   key_name_1              = "prod-bastion-host-key"
   name_sg_1               = "prod_bastion_host_sg_1"
   associate_public_ip_1   = true
+  vpc_id = module.vpc.vpc_id
 }
+
 
 
 
