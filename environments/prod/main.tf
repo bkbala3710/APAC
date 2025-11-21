@@ -13,7 +13,7 @@ module "vpc" {
 module "ec2" {
   source = "../../modules/ec2"
 
-  name_1                  = "APAC_PROD_Bastion_host_1"
+  name_1                  = "APAC_PRODUCTION_Bastion_host_1"
   ami_1                   = "ami-093a7f5fbae13ff67"
   instance_type_1         = "t2.micro"
   subnet_id_1             = module.vpc.subnet_ids_1[0]
@@ -22,6 +22,7 @@ module "ec2" {
   associate_public_ip_1   = true
   vpc_id = module.vpc.vpc_id
 }
+
 
 
 
