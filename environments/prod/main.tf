@@ -11,6 +11,8 @@ module "vpc" {
   azs_2          = ["ap-southeast-1a", "ap-southeast-1b"]
 }
 
+terraform import aws_s3_bucket.terraform-import-check-21112025
+
 /*
 
 module "ec2" {
@@ -34,6 +36,7 @@ resource "aws_ec2_instance_state" "stop_ec2" {
 
 
 */
+
 
 
 
