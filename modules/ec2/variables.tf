@@ -31,4 +31,7 @@ variable "associate_public_ip_1" {
   default = true
 }
 
+variable "vpc_id" {
+  type = string
+}
 
