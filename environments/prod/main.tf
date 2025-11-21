@@ -11,6 +11,7 @@ module "vpc" {
   azs_2          = ["ap-southeast-1a", "ap-southeast-1b"]
 }
 
+/*
 
 module "ec2" {
   source = "../../modules/ec2"
@@ -32,6 +33,7 @@ resource "aws_ec2_instance_state" "stop_ec2" {
 }
 
 
+*/
 
 
 
