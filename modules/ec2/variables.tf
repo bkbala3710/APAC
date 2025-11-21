@@ -23,11 +23,12 @@ variable "key_name_1" {
 }
 
 variable "name_sg_1" {
-  type = list(string)
+  type        = string
 }
 
 variable "associate_public_ip_1" {
   type    = bool
   default = true
 }
+
 
