@@ -24,6 +24,10 @@ module "ec2" {
 }
 
 
+resource "aws_ec2_instance_state" "stop_ec2" {
+  instance_id = module.ec2.instance_id   # Or your instance ID variable
+  state       = "stopped"
+}
 
 
 
