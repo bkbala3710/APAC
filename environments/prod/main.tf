@@ -12,7 +12,7 @@ module "vpc" {
 }
 
 resource "aws_s3_bucket" "terraform_import_check_21112025" {
-  bucket = "terraform-import-check-21112025"
+  bucket = "terraform-import-check-21112025-renamed"
 }
 
 /*
@@ -38,6 +38,7 @@ resource "aws_ec2_instance_state" "stop_ec2" {
 
 
 */
+
 
 
 
