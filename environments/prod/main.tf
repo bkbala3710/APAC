@@ -17,11 +17,12 @@ module "ec2" {
   ami_1                   = "ami-093a7f5fbae13ff67"
   instance_type_1         = "t2.micro"
   subnet_id_1             = module.vpc.subnet_ids_1[0]
-  key_name_1              = "prod-bastion-host-key"
+  key_name_1              = "20112025"
   name_sg_1               = "prod_bastion_host_sg_1"
   associate_public_ip_1   = true
   vpc_id = module.vpc.vpc_id
 }
+
 
 
 
