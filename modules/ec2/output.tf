@@ -11,5 +11,5 @@ output "private_ip_1" {
 }
 
 output "bastion_sg_id" {
-  value = aws_security_group.prod_bastion_host_sg_1.sg_id
+  value = aws_security_group.prod_bastion_host_sg_1.id
 }
