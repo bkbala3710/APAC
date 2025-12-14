@@ -10,12 +10,12 @@ module "vpc" {
   subnet_cidrs_2 = ["10.0.11.0/24", "10.0.12.0/24"]
   azs_2          = ["ap-southeast-1a", "ap-southeast-1b"]
 }
-
+/*
 resource "aws_s3_bucket" "terraform_import_check_21112025" {
   bucket = "terraform-import-check-21112025-renamed"
 }
 
-/*
+
 
 module "ec2" {
   source = "../../modules/ec2"
@@ -38,6 +38,7 @@ resource "aws_ec2_instance_state" "stop_ec2" {
 
 
 */
+
 
 
 
