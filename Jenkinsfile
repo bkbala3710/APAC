@@ -1,6 +1,6 @@
 pipeline {
   agent any
- 
+
   environment {
     ENV = "${env.BRANCH_NAME}"
     TF_WORKDIR = "environments/${env.BRANCH_NAME}"
@@ -9,14 +9,14 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/bkbala3710/APAC.git'
+        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/bkbala3710/APAC.git', credentialsId: 'git-creds'
       }
     }
 
     stage('Terraform Init') {
       steps {
         dir("${TF_WORKDIR}") {
-          sh 'terraform init'
+          sh 'terraform init -reconfigure'
         }
       }
     }
@@ -32,11 +32,11 @@ pipeline {
     }
 
     stage('Approval') {
-      /*
+/*
       when {
         expression { env.BRANCH_NAME == 'production' }
       }
-      */
+*/  
       steps {
         input message: "Approvee the deployment to production?", ok: 'Deploy'
       }
@@ -50,6 +50,12 @@ pipeline {
       }
     }
   }
-
 }
+
+
+
+
+
+
+
 
