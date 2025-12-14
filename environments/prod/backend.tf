@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.14.0"
+  required_version = "~> 1.11.0"
   required_providers {
     aws = {
       source = "hashicorp/aws"
@@ -7,9 +7,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "apac-20112025"
+    bucket = "103-jenkins-terraform"
     key    = "environments/prod/terraform.tfstate"
     region = "ap-southeast-1"
+    dynamodb_table = "103-jenkins-terraform" 
   }
 }
 
@@ -21,7 +22,6 @@ provider "aws" {
   alias  = "secondary"
   region = var.aws_region2
 }
-
 
 
 
