@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Iam-mithran/LWM-Infra-Pipeline.git', credentialsId: 'bc751208-b51c-46fe-9124-572af2259811'
+        git branch: "${env.BRANCH_NAME}", url: 'https://github.com/Iam-mithran/LWM-Infra-Pipeline.git', credentialsId: 'git-creds'
       }
     }
 
@@ -51,6 +51,7 @@ pipeline {
     }
   }
 }
+
 
 
 
