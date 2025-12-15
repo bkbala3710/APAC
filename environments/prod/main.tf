@@ -15,7 +15,6 @@ resource "aws_s3_bucket" "importeds3bucket" {
   bucket = "103-terraform-import"
 }
 
-terraform import aws_s3_bucket.importeds3bucket 103-terraform-import
 
 
 /*
@@ -41,6 +40,7 @@ resource "aws_ec2_instance_state" "stop_ec2" {
 
 
 */
+
 
 
 
