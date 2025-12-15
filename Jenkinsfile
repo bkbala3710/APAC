@@ -17,7 +17,7 @@ pipeline {
       steps {
         dir("${TF_WORKDIR}") {
           sh 'terraform init -reconfigure'
-          sh 'terraform import aws_s3_bucket.importeds3bucket 103-terraform-import'
+     /*     sh 'terraform import aws_s3_bucket.importeds3bucket 103-terraform-import'  */
         }
       }
     }
@@ -33,11 +33,11 @@ pipeline {
     }
 
     stage('Approval') {
-
+/*
       when {
         expression { env.BRANCH_NAME == 'production' }
       }
- 
+ */
       steps {
         input message: "Approvee the deployment to production?", ok: 'Deploy'
       }
@@ -53,6 +53,7 @@ pipeline {
     }
   }
 }
+
 
 
 
