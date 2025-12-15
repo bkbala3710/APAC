@@ -17,6 +17,7 @@ pipeline {
       steps {
         dir("${TF_WORKDIR}") {
           sh 'terraform init -reconfigure'
+          sh 'terraform import aws_s3_bucket.importeds3bucket my-prod-logs-bucket'
         }
       }
     }
@@ -51,6 +52,7 @@ pipeline {
     }
   }
 }
+
 
 
 
