@@ -11,11 +11,12 @@ module "vpc" {
   azs_2          = ["ap-southeast-1a", "ap-southeast-1b"]
 }
 
-resource "aws_s3_bucket" "importeds3bucket" {
-  bucket = "103-terraform-import"
+
+
+module "s3" {
+  source   = "../../modules/s3"
+  bucket_1 = "103-terraform-import"
 }
-
-
 
 /*
 
@@ -40,6 +41,7 @@ resource "aws_ec2_instance_state" "stop_ec2" {
 
 
 */
+
 
 
 
