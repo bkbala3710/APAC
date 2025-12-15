@@ -37,10 +37,11 @@ pipeline {
       when {
         expression { env.BRANCH_NAME == 'production' }
       }
-*/  
+
       steps {
         input message: "Approvee the deployment to production?", ok: 'Deploy'
       }
+      */  
     }
 
     stage('Terraform Apply') {
@@ -52,6 +53,7 @@ pipeline {
     }
   }
 }
+
 
 
 
